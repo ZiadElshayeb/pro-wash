@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  webhook:
+    build: .
+    container_name: pro_wash_webhook
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - n8n-network
+
+networks:
+  n8n-network:
+    external: True
