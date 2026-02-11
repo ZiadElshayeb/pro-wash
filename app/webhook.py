@@ -4,7 +4,6 @@ import json
 from dotenv import load_dotenv
 from pydantic import BaseModel
 import requests
-from schemas.send_template import SendMessageRequest
 
 load_dotenv()
 
