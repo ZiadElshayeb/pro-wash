@@ -71,6 +71,12 @@ async def receive_webhook(request: Request):
 
 ###########################################################################################
 
+class SendMessageRequest(BaseModel):
+    to: str
+    template_name: str = "pro_wash_v3"
+    language_code: str = "ar"
+    consumption_id: str = "unused"
+
 # POST - API to send WhatsApp messages
 @app.post("/send-message")
 def send_whatsapp_message(payload: SendMessageRequest):
