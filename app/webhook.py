@@ -37,7 +37,7 @@ async def send_whatsapp_message(payload: SendMessageRequest):
     """
     start_time = datetime.now()
 
-    logger.info(f"Request received - To: {payload.to}, Template: {payload.template_name}")
+    logger.info(f"Request received - To: {payload.to}, Template: {payload.template_name}, consumption id: {payload.consumption_id}")
 
     try:
         phone_number_id = os.environ.get("WHATSAPP_BUSINESS_PHONE_NUMBER_ID")
